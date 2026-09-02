@@ -1,0 +1,682 @@
+:root {
+    --green: #142a23;
+    --dark-green: #0d1d18;
+    --cream: #f4efe5;
+    --gold: #c89d59;
+    --light-gold: #dfbb80;
+    --gray: #69716c;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--green);
+    font-family: "DM Sans", sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    padding: 20px 0;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(13, 29, 24, 0.96);
+    padding: 13px 0;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.navbar-brand span,
+.footer-logo span {
+    color: var(--gold);
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 14px;
+    margin: 0 8px;
+    opacity: 0.9;
+}
+
+.nav-link:hover {
+    color: var(--light-gold) !important;
+}
+
+.nav-button {
+    display: inline-block;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 50px;
+    padding: 10px 19px;
+    font-size: 13px;
+}
+
+.nav-button:hover {
+    background: white;
+    color: var(--green);
+}
+
+.navbar-toggler {
+    border: 0;
+    color: white;
+    font-size: 28px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 760px;
+    height: 100vh;
+
+    background:
+        url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 22, 17, 0.85),
+            rgba(7, 22, 17, 0.35),
+            rgba(7, 22, 17, 0.25)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(60px, 8vw, 105px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 0 0 30px;
+}
+
+.hero h1 span {
+    color: var(--light-gold);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 540px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #e7ebe7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 14px 23px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.main-btn {
+    background: var(--gold);
+    color: var(--green);
+}
+
+.main-btn:hover {
+    background: var(--light-gold);
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    border: 1px solid rgba(255,255,255,0.7);
+    color: white;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: var(--green);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 28px;
+    left: 5%;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.scroll-down i {
+    margin-left: 12px;
+    font-size: 15px;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.intro-section,
+.places-section,
+.food-section,
+.plan-section {
+    padding: 110px 0;
+}
+
+.big-title {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.big-title em {
+    color: var(--gold);
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555d57;
+    max-width: 550px;
+}
+
+.discover-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 6px;
+}
+
+.discover-link i {
+    margin-left: 8px;
+}
+
+
+/* =========================
+   PLACES
+========================= */
+
+.places-section {
+    background: white;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-description {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.place-card {
+    background: #f5f2eb;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.place-image {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hagia {
+    background-image:
+        url("https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=85");
+}
+
+.galata {
+    background-image:
+        url("https://images.unsplash.com/photo-1608481337062-4093bf3ab8ed?auto=format&fit=crop&w=900&q=85");
+}
+
+.topkapi {
+    background-image:
+        url("https://images.unsplash.com/photo-1589561454226-796a8aa89b05?auto=format&fit=crop&w=900&q=85");
+}
+
+.cistern {
+    background-image:
+        url("https://images.unsplash.com/photo-1565279556073-9b7e6d6d7c3e?auto=format&fit=crop&w=900&q=85");
+}
+
+.place-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: white;
+    padding: 7px 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.place-content {
+    padding: 22px;
+}
+
+.place-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.place-content p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
+   BOSPHORUS
+========================= */
+
+.bosphorus-section {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    background: var(--green);
+    color: white;
+}
+
+.bosphorus-image {
+    background:
+        url("https://images.unsplash.com/photo-1537211261771-e525b9e404bd?auto=format&fit=crop&w=1400&q=90")
+        center/cover;
+}
+
+.bosphorus-content {
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bosphorus-content .big-title {
+    color: white;
+}
+
+.bosphorus-content > p:not(.section-label) {
+    max-width: 500px;
+    color: #cbd3ce;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+.facts {
+    border-top: 1px solid #53615b;
+    margin-top: 35px;
+    padding-top: 25px;
+}
+
+.facts strong {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    display: block;
+}
+
+.facts span {
+    color: #aeb8b2;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   FOOD
+========================= */
+
+.food-section {
+    background: var(--cream);
+}
+
+.food-card {
+    background: #ebe4d7;
+    padding: 30px;
+
+    display: flex;
+    gap: 20px;
+
+    min-height: 155px;
+
+    transition: 0.25s;
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+}
+
+.food-icon {
+    font-size: 32px;
+}
+
+.food-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.food-card p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
+   TIPS
+========================= */
+
+.tips-section {
+    background: var(--green);
+    color: white;
+    padding: 110px 0;
+}
+
+.tips-row {
+    margin-top: 55px;
+}
+
+.tip-card {
+    border-top: 1px solid #52625b;
+    padding: 25px 25px 20px 0;
+    height: 100%;
+}
+
+.tip-card > span {
+    color: var(--gold);
+    font-size: 11px;
+}
+
+.tip-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    margin-top: 28px;
+}
+
+.tip-card p {
+    color: #bdc7c1;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PLAN
+========================= */
+
+.plan-box {
+    background: #e9dfcd;
+
+    padding: 70px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    align-items: end;
+}
+
+.plan-box p:not(.section-label) {
+    color: #5e665f;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--dark-green);
+    color: #d4d9d5;
+    padding: 55px 0 20px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
+}
+
+footer p {
+    color: #89948e;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+footer hr {
+    border-color: #30403a;
+    margin: 45px 0 15px;
+}
+
+.copyright {
+    margin: 0;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast-message {
+    position: fixed;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translate(-50%, 30px);
+
+    background: var(--green);
+    color: white;
+
+    padding: 15px 22px;
+
+    border-radius: 50px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 2000;
+
+    font-size: 13px;
+}
+
+.toast-message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+#topButton {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--gold);
+    color: var(--green);
+
+    display: none;
+
+    z-index: 1000;
+
+    transition: 0.2s;
+}
+
+#topButton:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        background: rgba(13,29,24,0.95);
+    }
+
+    .nav-button {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .bosphorus-section {
+        grid-template-columns: 1fr;
+    }
+
+    .bosphorus-image {
+        min-height: 450px;
+    }
+
+    .plan-box {
+        grid-template-columns: 1fr;
+        padding: 50px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        margin-top: 25px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .intro-section,
+    .places-section,
+    .food-section,
+    .plan-section,
+    .tips-section {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .big-title {
+        font-size: 42px;
+    }
+
+    .place-image {
+        height: 300px;
+    }
+
+    .bosphorus-content {
+        padding: 70px 8%;
+    }
+
+    .plan-box {
+        padding: 40px 30px;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+}
